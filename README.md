@@ -33,13 +33,15 @@ return $reflect->invokeArgs(isset($class) ? $class : null, $args);
 Request.php  
 中方法 private function filterValue(&$value, $key, $filters)  
 其中 有段代码  
+```
             if (is_callable($filter)) {
                 // 调用函数或者方法过滤
                 $value = call_user_func($filter, $value);
                 echo "hhh   lqqq";
                 var_dump($filter, $value);
             }
-            
+```
+
 ==》 “$value = call_user_func($filter, $value)”    如果$filter 没有防御好，就会执行PHP解释器就会执行名字未$filter的函数（可以是框架里面的，也可以是PHP 原生提供的方法。）  ==》这就是 问的原因（因为你不知攻击者会执行什么函数。）  
 ===》 所以写代码，也没那么容易。哎！ 攻防转化呀！！！  
 
